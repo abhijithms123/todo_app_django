@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <table class="table">
+            <tr>
+                <th>Task Name</th>
+                <th>status</th>
+                <th>created date</th>
+            </tr>
+            {%for todo in todos%}
+            <tr>
+                <td>{{todo.task_name}}</td>
+                <td>{{todo.completed}}</td>
+                <td>{{todo.created_date}}</td>
+                <td>
+                    <a href="{%url 'tododetail' todo.id%}" class="btn btn-outline-primary">View</a>
+                    <a href="{%url 'changetodo' todo.id%}" class="btn btn-outline-warning">Edit</a>
+                    <a href="{%url 'removetodo' todo.id%}" class="btn btn-outline-danger">Delete</a>
+                </td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+    <div class="col-2"></div>
+</div>
+{%endblock%}

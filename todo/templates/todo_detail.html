@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+{%block body_block%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <div class="card">
+            <h5 class="card-header">TodoDetail</h5>
+            <div class="card-body">
+                <h5 class="card-title">{{todo.task_name}}</h5>
+                <p class="card-text">completed status: {{todo.completed}}</p>
+                <p class="card-text">completed date: {{todo.created_date}}</p>
+                <p class="card-text">user: {{todo.user}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-4"></div>
+</div>
+{%endblock%}
